@@ -2,6 +2,7 @@ package uk.ac.abdn.csd;
 
 import com.github.javafaker.*;
 import java.awt.BorderLayout;
+import java.awt.event.*;
 import javax.swing.*;
 import java.lang.StringBuilder;
 /**
@@ -14,6 +15,15 @@ public class App
     protected static JButton newStory;
     protected static JTextPane storyPane;
     protected static String story;
+
+
+    class StoryButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e){
+            String tempText = tempField.getText();
+            story = Story(Integer.valueOf(tempText));
+            storyPane.setText(story);
+        }
+    }
 
     private static String genStory()
     {
@@ -54,7 +64,7 @@ public class App
                 });
     }
 
-    public static String Story(int temp){
+    public static String Story(Integer temp){
         Faker faker = new Faker();
         StringBuilder story = new StringBuilder();
         story.append("One summer day of ");story.append(convert(temp));
