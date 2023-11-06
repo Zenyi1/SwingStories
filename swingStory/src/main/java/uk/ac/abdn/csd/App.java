@@ -52,6 +52,7 @@ public class App
     public static String Story(){
         Faker faker = new Faker();
         StringBuilder story = new StringBuilder();
+        story.append("One summer day of ");story.append(convert(55));story.append(" degrees celsius a(n) \n");story.append(faker.hipster().word());
         story.append("In a(n) ");
         story.append(faker.hipster().word());
         story.append(" ");
@@ -70,5 +71,8 @@ public class App
         story.append(faker.gameOfThrones().quote());
         story.append("!");
         return story.toString();        
+    }
+
+    public static Integer convert(Integer temp){Integer converted = (temp -32) * 5/9;return converted;
     }
 }
