@@ -10,6 +10,11 @@ import java.lang.StringBuilder;
  */
 public class App 
 {
+    protected static JTextField tempField;
+    protected static JButton newStory;
+    protected static JTextPane storyPane;
+    protected static String story;
+
     private static String genStory()
     {
         Faker faker = new Faker();
@@ -26,7 +31,7 @@ public class App
         JFrame frame = new JFrame("Swing Story Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // getting story
-        String story = Story();
+        String story = Story(55);
 
         // Labels
         JLabel introLabel = new JLabel("The story is: ");
@@ -49,10 +54,12 @@ public class App
                 });
     }
 
-    public static String Story(){
+    public static String Story(int temp){
         Faker faker = new Faker();
         StringBuilder story = new StringBuilder();
-        story.append("One summer day of ");story.append(convert(55));story.append(" degrees celsius a(n) \n");story.append(faker.hipster().word());
+        story.append("One summer day of ");story.append(convert(temp));
+        story.append(" degrees celsius a(n) \n");
+        story.append(faker.hipster().word());
         story.append("In a(n) ");
         story.append(faker.hipster().word());
         story.append(" ");
