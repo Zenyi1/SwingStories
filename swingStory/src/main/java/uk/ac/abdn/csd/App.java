@@ -51,7 +51,7 @@ public class App
     public static String Story(){
         Faker faker = new Faker();
         StringBuilder story = new StringBuilder();
-        story.append("ln a(n)");
+        story.append("In a(n)");
         story.append(faker.hipster().word());
         story.append(" ");
         story.append(faker.job().field());
