@@ -29,10 +29,11 @@ public class App
         String story = Story();
 
         // Labels
-        JLabel introLabel = new JLabel("The story goes: ");
-        JLabel storyLabel = new JLabel(story);
+        JLabel introLabel = new JLabel("The story is: ");
+        JTextPane storyPane = new JTextPane();
+        storyPane.setText(story);
         frame.getContentPane().add(introLabel, BorderLayout.PAGE_START);
-        frame.getContentPane().add(storyLabel, BorderLayout.LINE_START);
+        frame.getContentPane().add(storyPane, BorderLayout.LINE_START);
         frame.setSize(400, 300);
         frame.setVisible(true);
     }
@@ -51,7 +52,7 @@ public class App
     public static String Story(){
         Faker faker = new Faker();
         StringBuilder story = new StringBuilder();
-        story.append("In a(n)");
+        story.append("In a(n) ");
         story.append(faker.hipster().word());
         story.append(" ");
         story.append(faker.job().field());
