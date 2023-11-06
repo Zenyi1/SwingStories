@@ -55,9 +55,9 @@ public class App
         story.append(faker.hipster().word());
         story.append(" ");
         story.append(faker.job().field());
-        story.append("a young");
+        story.append(" a young ");
         story.append(faker.hobbit().character());
-        story.append("stumbles across a(n)");
+        story.append(" stumbles across a(n) ");
         story.append(faker.ancient().primordial());
         story.append(" which spurs them into conflict with ");
         story.append(faker.starTrek().villain());
