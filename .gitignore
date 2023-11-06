@@ -1,0 +1,3 @@
+swingStory/target/*.jar
+swingStory/target/classes/**.jar
+swingStory/target/surefire-reports/**
