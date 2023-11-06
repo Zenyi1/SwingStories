@@ -3,7 +3,7 @@ package uk.ac.abdn.csd;
 import com.github.javafaker.*;
 import java.awt.BorderLayout;
 import javax.swing.*;
-
+import java.lang.StringBuilder;
 /**
  * Hello world!
  *
@@ -26,7 +26,7 @@ public class App
         JFrame frame = new JFrame("Swing Story Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // getting story
-        String story = genStory();
+        String story = Story();
 
         // Labels
         JLabel introLabel = new JLabel("The story goes: ");
@@ -46,5 +46,28 @@ public class App
                         createAndShowGUI();
                     }
                 });
+    }
+
+    public static String Story(){
+        Faker faker = new Faker();
+        StringBuilder story = new StringBuilder();
+        story.append("ln a(n)");
+        story.append(faker.hipster().word());
+        story.append(" ");
+        story.append(faker.job().field());
+        story.append("a young");
+        story.append(faker.hobbit().character());
+        story.append("stumbles across a(n)");
+        story.append(faker.ancient().primordial());
+        story.append(" which spurs them into conflict with ");
+        story.append(faker.starTrek().villain());
+        story.append(" and her ");
+        story.append(faker.hacker().noun());
+        story.append(" culminating in ");
+        story.append(faker.leagueOfLegends().summonerSpell());
+        story.append(" where someone shouts ");
+        story.append(faker.gameOfThrones().quote());
+        story.append("!");
+        return story.toString();        
     }
 }
