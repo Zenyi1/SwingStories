@@ -1,3 +1,4 @@
 swingStory/target/**.jar
-swingStory/target/classes/**.class
+swingStory/target/classes/uk/ac/abdn/csd/**.class
+swingStory/target/test-classes/uk/ac/abdn/csd/**.class
 swingStory/target/surefire-reports/**
